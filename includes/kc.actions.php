@@ -860,13 +860,19 @@ function kc_get_attachment_image_src ($image = '', $id = '', $size = 'full', $ic
 			delete_transient('kc_attach_xml_'.$id);
 		}
 	}
-
-	return array(
-		KC_URL.'/assets/images/get_start.jpg',
-		2000,
-		1000,
-		''
-	);
+	
+	// If conditions are not met above stop returning KC as the default image
+	
+	if (is_admin()) {
+		
+		return array(
+			KC_URL.'/assets/images/get_start.jpg',
+			2000,
+			1000,
+			''
+		);
+		
+	}
 
 }
 
