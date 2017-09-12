@@ -760,8 +760,8 @@ function kc_attach_url($url = '') {
 
 	$test_exist = str_replace(
 		array(KC_SITE, '/', '\\'),
-		array(untrailingslashit(ABSPATH), KDS, KDS),
-		$url
+        array(untrailingslashit(dirname(WP_CONTENT_DIR)), KDS, KDS),
+        $url
 	);
 
 	if (count($xmls) === 0) {
